@@ -12,10 +12,8 @@ export class HomePage {
     public platform: Platform, 
   ) {}
 
-  play(e){
-    console.log(e.target.innerText);
-    let button = e.target.innerText;
-    switch(button){
+  play(note : string){
+    switch(note){
       case "C" :
             this.playPianoNote("/assets/notes/C.mp3");
             break;
@@ -36,6 +34,21 @@ export class HomePage {
             break;
       case "B" :
             this.playPianoNote("/assets/notes/B.mp3");
+            break;
+      case "AS" : 
+            this.playPianoNote("/assets/notes/AS.mp3");
+            break;
+      case "GS" : 
+            this.playPianoNote("/assets/notes/GS.mp3");
+            break;
+      case "FS" : 
+            this.playPianoNote("/assets/notes/FS.mp3");
+            break;
+      case "DS" : 
+            this.playPianoNote("/assets/notes/DS.mp3");
+            break;
+      case "CS" : 
+            this.playPianoNote("/assets/notes/CS.mp3");
             break;
       default : 
             console.log("default");
