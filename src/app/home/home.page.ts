@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -7,10 +7,21 @@ import { Platform } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  keyboardElement : any;
+  @ViewChild('keyboard', { static: false }) keyboard: any;
+  saveX : number;
+  saveY : number;
 
   constructor(
     public platform: Platform, 
   ) {}
+
+  ngAfterViewInit(){
+      this.keyboardElement = this.keyboard.nativeElement;
+      this.keyboardElement.width = this.platform.width() + '';
+      this.keyboardElement.height = 200;
+      console.log(this.keyboardElement);
+  }
 
   play(note : string){
     switch(note){
@@ -59,6 +70,20 @@ export class HomePage {
   playPianoNote(note){
     let audio = new Audio(note);
     audio.play();
+  }
+
+  getPosition(ev){
+    let keyboardPosition = this.keyboardElement.getBoundingClientRect();
+    this.saveX = ev.pageX - keyboardPosition.x;
+    this.saveY = ev.pageY - keyboardPosition.y;
+    console.log(this.saveX+"---"+this.saveY);
+
+  }
+
+  moved(event){
+      console.log(event.pageX+"----"+event.pageY);
+
+      
   }
   
 

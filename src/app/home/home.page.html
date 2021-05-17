@@ -7,18 +7,18 @@
 </ion-header>
 
 <ion-content>
-  <div class="set">
-    <button class="white b" (click)="play('B')"></button>
-    <button class="black as" (click)="play('AS')"></button>
-    <button class="white a" (click)="play('A')"></button>
-    <button class="black gs" (click)="play('GS')"></button>
-    <button class="white g" (click)="play('G')"></button>
-    <button class="black fs" (click)="play('FS')"></button>
-    <button class="white f" (click)="play('F')"></button>
-    <button class="white e" (click)="play('E')"></button>
-    <button class="black ds" (click)="play('DS')"></button>
-    <button class="white d" (click)="play('D')"></button>
-    <button class="black cs" (click)="play('CS')"></button>
-    <button class="white c" (click)="play('C')"></button>
-  </div>
+    <div class="set" #keyboard (mousemove)="moved($event)" (mousedown)="getPosition($event)">
+      <ion-button class="white b" fill="clear" (click)="play('B', $event)"></ion-button>
+      <ion-button class="black as" fill="clear" (click)="play('AS',$event)"></ion-button>
+      <ion-button class="white a" fill="clear" (touchstart)="play('A')"></ion-button>
+      <ion-button class="black gs" fill="clear" (touchstart)="play('GS')"></ion-button>
+      <ion-button class="white g" fill="clear" (touchstart)="play('G')"></ion-button>
+      <ion-button class="black fs" fill="clear" (touchstart)="play('FS')"></ion-button>
+      <ion-button class="white f" fill="clear" (touchstart)="play('F')"></ion-button>
+      <ion-button class="white e" fill="clear" (touchstart)="play('E')"></ion-button>
+      <ion-button class="black ds" fill="clear" (touchstart)="play('DS')"></ion-button>
+      <ion-button class="white d" fill="clear" (touchstart)="play('D')"></ion-button>
+      <ion-button class="black cs" fill="clear" (touchstart)="play('CS')"></ion-button>
+      <ion-button class="white c" fill="clear" (touchstart)="play('C')"></ion-button>
+    </div>
 </ion-content>
