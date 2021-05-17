@@ -8,8 +8,8 @@ body {
   height : 60%
 }
 
-ul {
-  height:80%;
+div {
+  height:18.875em;
   width:34em;
   margin:5em auto;
   padding:3em 0 0 3em;
@@ -20,16 +20,15 @@ ul {
   box-shadow:0 0 50px rgba(0,0,0,0.5) inset,0 1px rgba(212,152,125,0.2) inset,0 5px 15px rgba(0,0,0,0.5)
 }
 
-li {
+button {
   margin:0;
   padding:0;
-  list-style:none;
   position:relative;
   float:left
 }
 
-ul .white {
-  height:90%;
+div .white {
+  height:16em;
   width:4em;
   z-index:1;
   border-left:1px solid #bbb;
@@ -39,7 +38,7 @@ ul .white {
   background:linear-gradient(to bottom,#eee 0%,#fff 100%)
 }
 
-ul .white:active {
+div .white:active {
   border-top:1px solid #777;
   border-left:1px solid #999;
   border-bottom:1px solid #999;
@@ -67,10 +66,10 @@ ul .white:active {
   margin:0 0 0 -1em
 }
 
-ul li:first-child {
+div button:first-child {
   border-radius:5px 0 5px 5px
 }
 
-ul li:last-child {
+div button:last-child {
   border-radius:0 5px 5px 5px
 }
