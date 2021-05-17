@@ -57,9 +57,7 @@ export class HomePage {
   }
 
   playPianoNote(note){
-    let audio = new Audio();
-    audio.src=note;
-    audio.load();
+    let audio = new Audio(note);
     audio.play();
   }
   
